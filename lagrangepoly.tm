@@ -3,7 +3,7 @@
 <style|article>
 
 <\body>
-  <assign|cov|<macro|<math|\<vartriangleleft\>>>>
+  <assign|cov|<macro|<math|\<vartriangleleft\>>>><assign|save-aux|false>
 
   <doc-data|<doc-title|Lagrange polynomials and non-trivial spaces of
   zeros>|<doc-author-data|<author-name|Bas Spitters>>>
@@ -315,11 +315,28 @@
   We prove that the integral is defines a primitive. (this is possible by
   going via corn).
 
-  In fact, I suspect that integration can be abstractly characterized as a
-  primitive. However, it is not clear to me whether this abstraction is
-  helpful. Depending on this decision the following are either axioms or
-  lemma's. When done abstractly, we would have two implementations of this
-  interface: Corn and Spitters/O'Connor.
+  The following abstract description of the integral, by Bridger, seems
+  useful:\ 
+
+  <\enumerate>
+    <item>For <math|[u,v]\<subset\>I and ><math|A\<leqslant\>f\<leqslant\>B>,
+    we have <math|A(v-u)\<leqslant\><big|int><rsup|v><rsub|u>f\<leqslant\>B(v-u)>.
+
+    <item>For <math|[a,b]\<subset\>I> and <math|c\<in\>[a,b]>, we have
+    <math|<big|int><rsub|a><rsup|c>f+<big|int><rsub|c><rsup|b>f=<big|int><rsub|a><rsup|b>f>.
+
+    <item>Connection of the integral and the modulus of conitnuity (p170).
+  </enumerate>
+
+  The first condition may be replaced by <math|<big|int>>is positive and
+  <math|<big|int><rsub|u><rsup|v>1=(v-u)>. The third condition can be derived
+  by using piecewise linear functions.
+
+  We could have two implementations of this interface: Corn and
+  Spitters/O'Connor.
+
+  We prove can prove the fundamental theorem of calculus (<math|<big|int>f>
+  is differentiable), but this will probably be too much of a divergence.
 
   <math|F> is a primitive of <math|f> if <math|F> is differentiable and
   <math|F<rprime|'>=f>.\ 
@@ -1062,44 +1079,44 @@
   <\collection>
     <associate|B-cont-prod|<tuple|14|4>>
     <associate|GenRolle|<tuple|2|1>>
-    <associate|Genocchi|<tuple|2|7>>
-    <associate|Genocchi2|<tuple|3|7>>
-    <associate|Hermite-Genocchi|<tuple|1|6>>
-    <associate|Newton-coeff|<tuple|5|4>>
-    <associate|Thm:HG|<tuple|28|6>>
+    <associate|Genocchi|<tuple|2|8>>
+    <associate|Genocchi2|<tuple|3|8>>
+    <associate|Hermite-Genocchi|<tuple|1|7>>
+    <associate|Newton-coeff|<tuple|5|5>>
+    <associate|Thm:HG|<tuple|28|7>>
     <associate|auto-1|<tuple|1|1>>
     <associate|auto-10|<tuple|7|10>>
-    <associate|auto-11|<tuple|7|9>>
+    <associate|auto-11|<tuple|7|10>>
     <associate|auto-2|<tuple|2|1>>
     <associate|auto-3|<tuple|3|2>>
     <associate|auto-4|<tuple|4|3>>
     <associate|auto-5|<tuple|4.1|3>>
     <associate|auto-6|<tuple|4.2|3>>
     <associate|auto-7|<tuple|4.3|4>>
-    <associate|auto-8|<tuple|5|9>>
-    <associate|auto-9|<tuple|6|10>>
+    <associate|auto-8|<tuple|5|5>>
+    <associate|auto-9|<tuple|6|9>>
     <associate|bib-Alexander|<tuple|Ale|10>>
     <associate|bib-Bishop/Bridges:1985|<tuple|BB85|10>>
     <associate|bib-BridgerStolzenberg|<tuple|BS99|10>>
-    <associate|bib-BurdenFaires|<tuple|FB98|10>>
-    <associate|bib-CViet|<tuple|Vic09|10>>
+    <associate|bib-BurdenFaires|<tuple|FB98|11>>
+    <associate|bib-CViet|<tuple|Vic09|11>>
     <associate|bib-DiffFields|<tuple|BGN04|10>>
     <associate|bib-FairesBurden|<tuple|FB98b|4>>
-    <associate|bib-Palmgren|<tuple|Pal07|10>>
-    <associate|bib-SuliMayers|<tuple|SM03|10>>
-    <associate|bib-Taylor|<tuple|Tay05|10>>
+    <associate|bib-Palmgren|<tuple|Pal07|11>>
+    <associate|bib-SuliMayers|<tuple|SM03|11>>
+    <associate|bib-Taylor|<tuple|Tay05|11>>
     <associate|bib-banach-algebra|<tuple|CS|10>>
     <associate|bib-deBoor|<tuple|dB05|10>>
     <associate|cor:weight|<tuple|29|7>>
     <associate|def:Lagrange-poly|<tuple|3|1>>
-    <associate|eps-Rolle|<tuple|5|1>>
+    <associate|eps-Rolle|<tuple|5|2>>
     <associate|footnote-1|<tuple|1|2>>
     <associate|footnr-1|<tuple|1|2>>
     <associate|form:explicit|<tuple|27|6>>
     <associate|formal-Rolle|<tuple|7|2>>
-    <associate|generic|<tuple|3|?>>
-    <associate|prop:divdiff|<tuple|20|5>>
-    <associate|sec:HG|<tuple|5|?>>
+    <associate|generic|<tuple|3|2>>
+    <associate|prop:divdiff|<tuple|20|6>>
+    <associate|sec:HG|<tuple|5|5>>
   </collection>
 </references>
 
@@ -1135,42 +1152,46 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Main
-      result> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Lagrange
+      interpolation> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
 
-      <with|par-left|<quote|1.5fn>|2.1<space|2spc>Generic zeros
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-3>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc><label|generic>Generic
+      zeros> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-3><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Polynomials>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Polynomials>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-4><vspace|0.5fn>
 
-      <with|par-left|<quote|1.5fn>|3.1<space|2spc>Intermezzo: defining
+      <with|par-left|<quote|1.5fn>|4.1<space|2spc>Intermezzo: defining
       differentiation <with|font|<quote|roman>|\V> unfinished
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-5>>
 
-      <with|par-left|<quote|1.5fn>|3.2<space|2spc>Iterated integrals.
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <with|par-left|<quote|1.5fn>|4.2<space|2spc>An axiomatic treatment of
+      integration? <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-6>>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Hermite-Genocchi
-      formula> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-7><vspace|0.5fn>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Conclusion>
+      <with|par-left|<quote|1.5fn>|4.3<space|2spc>Iterated integrals.
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-7>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc><label|sec:HG>Hermite-Genocchi
+      formula> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-8><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Acknowledgements>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Conclusion>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-9><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|7<space|2spc>Acknowledgements>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-10><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-11><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
